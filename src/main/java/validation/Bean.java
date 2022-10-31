@@ -4,11 +4,15 @@ import java.util.UUID;
 
 public class Bean {
 
-    private Long id;
-    private Enum type;
-    private String first;
-    private String second;
-    private UUID uuid;
+    @Required(error="MISSING_ID", type="", value=Enum.NULL)
+    public Long id;
+    @Required(error="MISSING_TYPE", type="", value=Enum.NULL)
+    public Enum type;
+    @Required(error="MISSING_FIRST", type="", value=Enum.NULL)
+    public String first;
+    @Required(error="MISSING_SECOND", type="type", value=Enum.SECOND)
+    public String second;
+    public UUID uuid;
 
     public Long getId() {
         return id;
